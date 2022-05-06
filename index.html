@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <section id="weather-section">
+        <form action="">
+          <input type="text" id="city-input" />
+          <button type="submit">Search</button>
+        </form>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Weather-clear.svg/2048px-Weather-clear.svg.png"
+          alt=""
+        />
+        <span id="temp">12</span>
+        <span class="unit-of-measurement">°C</span>
+        <span id="date">Monday, 16:00</span>
+        <span id="main">Mostly cloudy</span>
+        <div id="city-container">
+          <p>New York, NY, USA</p>
+        </div>
+      </section>
+      <section id="highlights-section">
+        <div id="toggle">
+          <h2>Today's highlights</h2>
+          <span id="unit-toggle">
+            <button id="metric">°C</button>
+            <button id="imperial">°F</button>
+            
+          </span>
+        </div>
+
+        <div id="highlights-container">
+          <div class="highlight-item">
+            <h3>Maximum and minimum temperature</h3>
+            <span id="max-temp">12</span><span class="unit-of-measurement">°C</span>
+            <span id="min-temp">6</span><span class="unit-of-measurement">°C</span>
+          </div>
+          <div class="highlight-item">
+            <h3>Wind Status</h3>
+            <span id="wind">7</span> <span>km/h</span>
+          </div>
+          <div class="highlight-item">
+            <h3>Humidity</h3>
+            <span id="humidity">12</span> <span>%</span>
+            <span>Normal</span>
+          </div>
+          <div class="highlight-item">
+            <h3>Visibility</h3>
+            <span id="visibility">10000</span> <span>m</span>
+            <span>Average</span>
+          </div>
+          <div class="highlight-item">
+            <h3>Sunrise & sunset</h3>
+            <span id="sunrise">Sunrise: 6:23am</span>
+            <span id="sunset">Sunset: 5:42pm</span>
+          </div>
+          <div class="highlight-item">
+            <h3>Pressure</h3>
+            <span id="pressure">1020</span>
+            <span>normal</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
