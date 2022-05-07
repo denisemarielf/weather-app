@@ -77,7 +77,7 @@ function displayWeather(){
     document.getElementById('sunrise').innerHTML=info.sunrise;
     document.getElementById('sunset').innerHTML=info.sunset;
     document.getElementById('pressure').innerHTML=info.pressure;
-    document.querySelector('img').src="images/"+info.main+".png";
+    document.querySelector('img').src="images/"+info.main.toLowerCase()+".png";
     document.querySelector('small').style.display = 'none';
     if(info.unit === 'metric') {
         setUnitOfMeasurement('°C')
