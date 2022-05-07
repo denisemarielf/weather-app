@@ -1,64 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
 * {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+   font-family: 'Quicksand', sans-serif;
+}
+
+html {
+    height: 100%;
 }
 
 body {
     width: 100vw;
-    mix-height: 100vh;
-    max-height: fit-content;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #dddddd;
 }
 
 main {
     width: 100%;
-    height: 100%;
+    height: 95%;
+    min-height: fit-content;
     display: flex;
-    border: 1px solid black;
-   
-    padding: 20px;
+    margin: 40px;
+    border-radius: 15px;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 form {
     display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
+input {
+    width: 80%;
+    padding-left: 10px;
+    font-size: larger;
+}
+
+input, button {
+    border: 1px solid transparent;
+    background-color: white;
+    height: 30px;
+}
+
+input:focus {
+    outline: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button > i {
+    font-size: larger;
+}
+
+
 #weather-section {
-    border-right: 1px solid black;
-    width: fit-content;
+    width: 40%;
+    height: 100%;
     flex-direction: column;
     display: flex;
     align-content: center;
     justify-content: center;
     gap: 20px;
-    padding: 20px;
+    padding: 21px;
+    background-color: white;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    align-items: center;
+
     
 }
 
 #weather-section > img {
     width: 200px;
     height: 200px;
-    border: 1px solid black;
+    
     
 }
 
+#main-temp {
+    font-size: 50px;
+}
+
 #city-container {
-    border: 1px solid black;
+    background-image: url(images/willian-justen-de-vasconcellos-_MMP5j_fCqw-unsplash.jpg);
+    background-size:cover;
+    color: white;
+    border-radius: 15px;
     width: 90%;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #highlights-section {
-    display: grid;
-    grid-template-rows: auto auto;
-    height: fit-content;
-    gap:20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #F7F6F9;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    padding: 10px;
+    min-height: fit-content; 
+    overflow-y: auto;
+
 }
 
 #toggle {
@@ -68,9 +123,22 @@ form {
     padding: 20px;
 }
 
-#metric {
+#unit-toggle {
     display: flex;
+    gap: 10px;
+
 }
+
+#unit-toggle > button {
+    background-color: white;
+    font-size: larger;
+    width: 36px;
+    height: 36px;
+    border-radius: 28px;
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
 
 #highlights-container {
     display: flex;
@@ -78,28 +146,107 @@ form {
     gap: 20px;
     align-content: center;
     justify-content: center;
+    padding: 50px;
 }
 
 .highlight-item {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     padding: 10px;
-    border: 1px solid black;
     border-radius: 15px;
-    width: 200px;
+    width: 250px;
     height: 200px;
-    align-content: center;
-    justify-content: space-evenly;
+    background-color: white;
+    justify-content: center;
+    align-items: start;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
 }
 
-@media (max-width: 1000px) {
-    main {
-        flex-wrap: wrap;
+.icon-2 {
+    width: 50px;
+    height: 50px;
+}
+
+#min-temp-container, #max-temp-container, #sunrise-container, #sunset-container {
+    display: flex;
+    align-items: center;
+    font-size: larger;
+}
+
+#wind-container, #humidity-container, #visibility-container, #pressure-container {
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    
+}
+
+#lenght-unit {
+    font-size: x-large;
+}
+
+#sunrise-container, #sunset-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+small {
+    align-self:flex-start;
+    padding-left: 10px;
+    display: none;
+}
+
+@media (max-width: 700px) {
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+    body {
+        width: 100%;
+        height: 100%;
+        background-color: white;
     }
 
+main {
+    min-width: 100%;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    box-shadow: none;
+ 
+
+}
     #weather-section {
-        border: none;
-        width: 100%;
-        align-items: center;
+        min-width: 100%;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
+
+   #highlights-section {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    height: fit-content;
+    overflow: visible;
+    
+   } 
+
+   #highlights-container {
+        padding-left: 0px;
+        padding-right: 0px;
+   }
+
+
+}
+
+.selected {
+    background-color: black !important;
+    color:white;
 }
