@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="main.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/79eae1fadf.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./styles.css" />
     <title>Document</title>
   </head>
@@ -12,60 +16,96 @@
     <main>
       <section id="weather-section">
         <form action="">
-          <input type="text" id="city-input" />
-          <button type="submit">Search</button>
+          <input type="text" id="city-input" placeholder="Search city..." />
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
         </form>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Weather-clear.svg/2048px-Weather-clear.svg.png"
-          alt=""
-        />
-        <span id="temp">12</span>
-        <span class="unit-of-measurement">°C</span>
-        <span id="date">Monday, 16:00</span>
-        <span id="main">Mostly cloudy</span>
+        <small>Sorry, I couldn't find the city. Try again?</small>
+        <img src="images/clear.png" alt="" />
+        <div id="main-temp">
+          <span id="temp"></span>
+          <span class="unit-of-measurement">°C</span>
+        </div>
+
+        <span id="date"></span>
+        <span id="main"></span>
+        <span id="description"></span>
         <div id="city-container">
-          <p>New York, NY, USA</p>
+          <p></p>
         </div>
       </section>
       <section id="highlights-section">
         <div id="toggle">
           <h2>Today's highlights</h2>
           <span id="unit-toggle">
-            <button id="metric">°C</button>
+            <button id="metric" class="selected">°C</button>
             <button id="imperial">°F</button>
-            
           </span>
         </div>
 
         <div id="highlights-container">
+            <div>
           <div class="highlight-item">
-            <h3>Maximum and minimum temperature</h3>
-            <span id="max-temp">12</span><span class="unit-of-measurement">°C</span>
-            <span id="min-temp">6</span><span class="unit-of-measurement">°C</span>
+            <h3>Max and min temperature</h3>
+            <div id="max-temp-container">
+              <img class="icon-2" src="images/thermometer-max.png"></img>
+            <span id="max-temp"></span>
+            <span class="unit-of-measurement"></span>
+          </div>
+          <div id="min-temp-container">
+            <img class="icon-2" src="images/thermometer-min.png"></img>
+            <span id="min-temp"></span
+            ><span class="unit-of-measurement"></span>
+          </div>
+            </div>
           </div>
           <div class="highlight-item">
             <h3>Wind Status</h3>
-            <span id="wind">7</span> <span>km/h</span>
+            <div id="wind-container">
+              <img class="icon" src="images/wind.png" alt="">
+              <span id="wind"></span> 
+              <span id="lenght-unit"></span>
+              
+            </div>
           </div>
           <div class="highlight-item">
             <h3>Humidity</h3>
-            <span id="humidity">12</span> <span>%</span>
-            <span>Normal</span>
+            <div id="humidity-container">
+              <img class ="icon" src="images/humidity.png" alt="">
+              <span id="humidity"></span> 
+            </div>
+
           </div>
           <div class="highlight-item">
             <h3>Visibility</h3>
-            <span id="visibility">10000</span> <span>m</span>
-            <span>Average</span>
+            <div id="visibility-container">
+              <img class="icon" src="images/fog.png" alt="">
+              <span id="visibility"></span> 
+              <span></span>
+            </div>
+
           </div>
           <div class="highlight-item">
             <h3>Sunrise & sunset</h3>
-            <span id="sunrise">Sunrise: 6:23am</span>
-            <span id="sunset">Sunset: 5:42pm</span>
+            <div id="sunrise-container">
+              <img class="icon-2" src="images/sunrise.png" alt="">
+              <span id="sunrise"></span>
+            </div>
+            <div id="sunset-container">
+              <img class="icon-2" src="images/sunset.png" alt="">
+              <span id="sunset"></span>
+            </div>
+            
           </div>
           <div class="highlight-item">
-            <h3>Pressure</h3>
-            <span id="pressure">1020</span>
-            <span>normal</span>
+            <h3>Atmospheric pressure</h3>
+            <div id="pressure-container">
+              <img class="icon" src="images/atmospheric.png" alt="">
+              <span id="pressure"></span>
+            </div>
+            
+        
           </div>
         </div>
       </section>
